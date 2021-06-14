@@ -19,15 +19,20 @@ public class UserRegistration {
 		// taking email
 		System.out.println("Enter email");
 		String email = sc.next();
+		sc.nextLine();
 		System.out.println(Pattern.matches("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$", email) ? "valid email" : "invalid email");
 		System.out.println("Enter mobile number along with country code");
 		String mobile = sc.nextLine();
 		// matching white space Character
-		if (mobile.charAt(2) == ' ') {
+		if ((mobile.charAt(2))==' ') {
 			mobile = mobile.replace(" ", "");
 			System.out.println((Pattern.matches("^[0-9]{2}[0-9]{10}$", mobile)) ? "valid mobile number" : "invalid mobile number");
 		} 
 		else
 			System.out.println("Invalid mobile number");
+		System.out.println("Enter password");
+		String passWord = sc.nextLine();
+		//matching with any number of characters more than 8
+		System.out.println(Pattern.matches("[\\s\\S]{8,}", passWord) ? "valid password" : "invalid password");
 	}
 }
