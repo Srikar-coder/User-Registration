@@ -1,7 +1,7 @@
 package com.bridgeLabz.regex;
 
-import java.util.Scanner;
-import java.util.regex.Pattern;
+import java.util.*;
+import java.util.regex.*;
 
 public class UserRegistration {
 	public static void main(String args[]) {
@@ -33,6 +33,13 @@ public class UserRegistration {
 		System.out.println("Enter password");
 		String passWord = sc.nextLine();
 		//matching with any number of characters more than 8
-		System.out.println(Pattern.matches("^(?=.*[A-Z])(?=.*[0-9]).{8,}$", passWord) ? "valid password" : "invalid password");
-	}
+		String regex="[^a-zA-Z0-9]";
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(passWord);
+		int count=0;
+		while(matcher.find())
+		count++;
+		passWord = passWord.replaceAll(regex,"");  
+		System.out.println((count==1 && Pattern.matches("^(?=.*[A-Z])(?=.*[0-9]).{8,}$", passWord)) ? "valid password":"invalid password");
+		}
 }
