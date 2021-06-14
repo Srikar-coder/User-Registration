@@ -24,15 +24,15 @@ public class UserRegistration {
 		System.out.println("Enter mobile number along with country code");
 		String mobile = sc.nextLine();
 		// matching white space Character
-		if ((mobile.charAt(2))==' ') {
+		if (mobile.length()>10 && (mobile.charAt(2))==' ') {
 			mobile = mobile.replace(" ", "");
 			System.out.println((Pattern.matches("^[0-9]{2}[0-9]{10}$", mobile)) ? "valid mobile number" : "invalid mobile number");
 		} 
 		else
 			System.out.println("Invalid mobile number");
 		System.out.println("Enter password");
-		String passWord = sc.next();
+		String passWord = sc.nextLine();
 		//matching with any number of characters more than 8
-		System.out.println(Pattern.matches("\\.*(.*[A-Z].*{8,})", passWord) ? "valid password" : "invalid password");
+		System.out.println(Pattern.matches("^(?=.*[A-Z]).{8,}$", passWord) ? "valid password" : "invalid password");
 	}
 }
