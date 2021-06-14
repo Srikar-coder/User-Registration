@@ -31,8 +31,8 @@ public class UserRegistration {
 		else
 			System.out.println("Invalid mobile number");
 		System.out.println("Enter password");
-		String passWord = sc.nextLine();
+		String passWord = sc.next();
 		//matching with any number of characters more than 8
-		System.out.println(Pattern.matches("[\\s\\S]{8,}", passWord) ? "valid password" : "invalid password");
+		System.out.println(Pattern.matches("\\.*(.*[A-Z].*{8,})", passWord) ? "valid password" : "invalid password");
 	}
 }
