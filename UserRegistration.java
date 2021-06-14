@@ -9,8 +9,13 @@ public class UserRegistration {
 		// taking first name
 		System.out.println("Enter the first name");
 		String firstName = sc.next();
-		sc.close();
 		// checking with regular expression
 		System.out.println(Pattern.matches("^[A-Z]{1}[a-z]{2,}", firstName));
+		// taking last name
+		System.out.println("Enter last name");
+		String lastName = sc.next();
+		sc.close();
+		// checking with regular expression
+		System.out.println(Pattern.matches("^[A-Z]{1}[a-z]{2,}", lastName));
 	}
 }
