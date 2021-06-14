@@ -33,6 +33,6 @@ public class UserRegistration {
 		System.out.println("Enter password");
 		String passWord = sc.nextLine();
 		//matching with any number of characters more than 8
-		System.out.println(Pattern.matches("^(?=.*[A-Z]).{8,}$", passWord) ? "valid password" : "invalid password");
+		System.out.println(Pattern.matches("^(?=.*[A-Z])(?=.*[0-9]).{8,}$", passWord) ? "valid password" : "invalid password");
 	}
 }
